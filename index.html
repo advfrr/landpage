@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferreira Advocacia | Advocacia, Consultoria e Assessoria Jurídica em Itaí/SP</title>
+<meta name="description" content="Ferreira Advocacia: advocacia, consultoria e assessoria jurídica para pessoas e empresas. Atendimento personalizado, ético e transparente em Itaí/SP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#060f1d; --navy:#0c1f3a; --navy-2:#12294b;
+  --gold:#b8975a; --gold-2:#d8bb83; --gold-3:#efe0bd;
+  --ivory:#f7f3ea; --paper:#fffdf9; --ink:#182133; --muted:#5f6878; --line:#e4dccb;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;text-align:center}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;color:inherit}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.wrap{width:min(1140px,100% - 44px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1}
+h2{font-size:clamp(2.4rem,4.8vw,3.9rem);color:var(--navy);letter-spacing:-.01em}
+h2 em,h1 em{font-style:italic;color:var(--gold)}
+section{padding:120px 0;position:relative}
+:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px}
+
+/* cabeçalho de seção */
+.eyebrow{display:flex;justify-content:center;align-items:center;gap:16px;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px}
+.eyebrow::before,.eyebrow::after{content:"";width:38px;height:1px;background:currentColor;opacity:.7}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:26px auto 0;color:var(--gold)}
+.orn::before,.orn::after{content:"";width:64px;height:1px;background:linear-gradient(90deg,transparent,currentColor)}
+.orn::after{transform:scaleX(-1)}
+.orn i{width:7px;height:7px;background:currentColor;transform:rotate(45deg)}
+.lead{color:var(--muted);max-width:60ch;margin:22px auto 0;font-size:1.04rem}
+.head{margin-bottom:72px}
+.on-dark h2{color:#fff}.on-dark .lead{color:rgba(255,255,255,.68)}
+
+/* grão nas seções escuras */
+.grain{position:relative;isolation:isolate}
+.grain::before{content:"";position:absolute;inset:0;background:var(--grain);opacity:.07;mix-blend-mode:overlay;pointer-events:none;z-index:-1}
+
+/* botões */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 36px;border:0;border-radius:2px;font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;isolation:isolate;transition:transform .25s var(--ease),box-shadow .25s var(--ease),color .3s,background .3s,border-color .3s}
+.btn .ic{font-size:1.25em;transition:transform .3s var(--ease)}
+.btn:hover .go{transform:translateX(5px)}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-22deg);transition:left .8s var(--ease);z-index:-1}
+.btn:hover::after{left:140%}
+.btn-gold{background:linear-gradient(180deg,#e6cd97,#c2a163);color:#0a1626;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 4px 0 #8b6f37,0 14px 26px rgba(0,0,0,.28)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 6px 0 #8b6f37,0 20px 32px rgba(0,0,0,.32)}
+.btn-gold:active{transform:translateY(3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 1px 0 #8b6f37,0 4px 8px rgba(0,0,0,.3)}
+.btn-line{color:var(--gold-3);border:1px solid rgba(216,187,131,.55);background:rgba(6,15,29,.25)}
+.btn-line:hover{background:var(--gold);color:#0a1626;border-color:var(--gold);transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 4px 0 var(--night),0 14px 24px rgba(12,31,58,.25)}
+.btn-navy:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 6px 0 var(--night),0 20px 30px rgba(12,31,58,.3)}
+.btn-navy:active{transform:translateY(3px);box-shadow:0 1px 0 var(--night)}
+.btn-wpp{background:linear-gradient(180deg,#39d97f,#1fae57);color:#04220f;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 4px 0 #0f7237,0 14px 26px rgba(0,0,0,.28)}
+.btn-wpp:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 6px 0 #0f7237,0 20px 32px rgba(0,0,0,.32)}
+.btn-wpp:active{transform:translateY(3px);box-shadow:0 1px 0 #0f7237}
+.btn-sm{padding:11px 22px;font-size:.7rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 3px 0 #8b6f37}
+
+/* progresso + header */
+#bar{position:fixed;top:0;left:0;height:2px;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold-3));transform-origin:0 50%;transform:scaleX(0);z-index:100}
+header{position:fixed;inset:0 0 auto;z-index:90;color:#fff;transition:background .35s,box-shadow .35s}
+header.solid,header.open{background:rgba(6,15,29,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(216,187,131,.25)}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:108px;transition:height .35s}
+header.solid .nav{height:74px}
+.logo{grid-column:2;grid-row:1;display:flex;flex-direction:column;align-items:center;line-height:1}
+.logo .mark{width:34px;height:34px;border:1px solid var(--gold-2);transform:rotate(45deg);display:grid;place-items:center;margin-bottom:11px;transition:.35s}
+.logo .mark b{transform:rotate(-45deg);font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--gold-2)}
+header.solid .logo .mark{width:0;height:0;border-width:0;margin:0;opacity:0;overflow:hidden}
+.logo strong{font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:.24em;padding-left:.24em}
+.logo small{font-size:.56rem;letter-spacing:.5em;color:var(--gold-2);margin-top:6px;padding-left:.5em}
+.menu{display:contents}
+.menu nav:first-child{grid-column:1;grid-row:1}
+.menu nav:last-child{grid-column:3;grid-row:1}
+.menu nav:first-child ul{justify-content:flex-start}
+.menu nav:last-child ul{justify-content:flex-end}
+nav ul{display:flex;gap:34px;align-items:center}
+nav a:not(.btn){font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;opacity:.8;position:relative;padding:6px 0;transition:opacity .2s}
+nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold-2);transform:scaleX(0);transition:transform .4s var(--ease)}
+nav a:not(.btn):hover{opacity:1}nav a:not(.btn):hover::after{transform:scaleX(1)}
+.burger{display:none;grid-column:3;justify-self:end;width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative}
+.burger span,.burger span::before,.burger span::after{position:absolute;left:11px;width:22px;height:1.5px;background:#fff;content:"";transition:.3s}
+.burger span{top:21px}.burger span::before{left:0;top:-7px}.burger span::after{left:0;top:7px}
+.burger[aria-expanded=true] span{background:transparent}
+.burger[aria-expanded=true] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded=true] span::after{top:0;transform:rotate(-45deg)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;color:#fff;overflow:hidden;padding:150px 0 130px;
+  background:radial-gradient(70% 55% at 50% 45%,rgba(28,63,112,.55),transparent 75%),radial-gradient(40% 30% at 50% 100%,rgba(184,151,90,.16),transparent 80%),linear-gradient(180deg,var(--night),var(--navy) 70%,#0a1a33)}
+.stage{position:absolute;inset:0;perspective:1500px;display:grid;place-items:center;pointer-events:none}
+.orbwrap{width:660px;height:660px;transform-style:preserve-3d;transform:rotateX(calc(var(--rx,0deg) + 12deg)) rotateY(var(--ry,0deg));transition:transform .3s ease-out}
+.axis{width:100%;height:100%;transform-style:preserve-3d;transform:rotateZ(-23deg)}
+.sphere{position:relative;width:100%;height:100%;transform-style:preserve-3d;animation:orb 70s linear infinite}
+@keyframes orb{to{transform:rotateY(360deg)}}
+.sphere i{position:absolute;border-radius:50%;border:1px solid rgba(216,187,131,.32)}
+.m{inset:0;transform:rotateY(calc(var(--k)*30deg))}
+.l{transform:rotateX(90deg) translateZ(var(--h))}
+.l0{inset:0;border-color:rgba(216,187,131,.6)!important}
+.l0::after{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--gold-3);box-shadow:0 0 18px 5px rgba(239,224,189,.7)}
+.l1{inset:38px;--h:150px}.l2{inset:38px;--h:-150px}.l3{inset:120px;--h:250px}.l4{inset:120px;--h:-250px}
+.dust span{position:absolute;bottom:-10px;border-radius:50%;background:var(--gold-2);opacity:0;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:.6}85%{opacity:.35}100%{transform:translateY(-100vh) translateX(24px);opacity:0}}
+.hero .in{position:relative;z-index:2;max-width:900px}
+.hero .place{font-size:.74rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-2);margin-bottom:30px}
+.hero h1{font-size:clamp(3rem,7.4vw,6.2rem);font-weight:500;letter-spacing:-.015em;text-shadow:0 4px 40px rgba(6,15,29,.6)}
+.hero h1 em{color:var(--gold-2)}
+.hero .sub{max-width:52ch;margin:30px auto 44px;font-size:1.1rem;color:rgba(255,255,255,.75);text-shadow:0 2px 20px rgba(6,15,29,.8)}
+.cta{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.hero-foot{position:absolute;left:0;right:0;bottom:34px;z-index:2;display:flex;justify-content:center;align-items:center;gap:22px;font-size:.68rem;letter-spacing:.36em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.hero-foot i{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+.scroll{position:absolute;left:50%;bottom:78px;width:1px;height:46px;background:linear-gradient(var(--gold-2),transparent);z-index:2;animation:drip 2.4s ease-in-out infinite;transform-origin:top}
+@keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* pilares */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.pillar{padding:10px 44px;position:relative}
+.pillar+.pillar::before{content:"";position:absolute;left:0;top:6%;bottom:6%;width:1px;background:linear-gradient(transparent,var(--line) 20%,var(--line) 80%,transparent)}
+.pillar .n{font-family:var(--serif);font-size:4.4rem;color:transparent;-webkit-text-stroke:1px var(--gold);line-height:1;margin-bottom:18px;display:block;transition:.5s var(--ease)}
+.pillar:hover .n{color:var(--gold);-webkit-text-stroke-color:var(--gold);transform:translateY(-6px)}
+.pillar h3{font-size:1.9rem;color:var(--navy);margin-bottom:14px}
+.pillar p{color:var(--muted);font-size:.96rem}
+
+/* áreas */
+.areas{background:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{--gx:50%;--gy:50%;position:relative;background:var(--paper);border:1px solid var(--line);padding:56px 34px 46px;transform-style:preserve-3d;transition:transform .25s ease-out,box-shadow .4s,border-color .4s;will-change:transform}
+.card::before{content:"";position:absolute;inset:8px;border:1px solid rgba(184,151,90,.28);pointer-events:none;transition:.4s}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(340px circle at var(--gx) var(--gy),rgba(216,187,131,.24),transparent 60%);opacity:0;transition:opacity .35s;pointer-events:none}
+.card:hover{box-shadow:0 30px 60px rgba(12,31,58,.13);border-color:var(--gold-2)}
+.card:hover::after{opacity:1}.card:hover::before{inset:12px;border-color:var(--gold)}
+.card .ico{width:70px;height:70px;margin:0 auto 26px;display:grid;place-items:center;font-size:1.9rem;color:var(--gold);position:relative;transform:translateZ(40px)}
+.card .ico::before{content:"";position:absolute;inset:0;border:1px solid var(--gold);transform:rotate(45deg);transition:.6s var(--ease)}
+.card:hover .ico::before{transform:rotate(225deg);background:var(--navy);border-color:var(--navy)}
+.card:hover .ico{color:var(--gold-2)}
+.card .ico .ic{position:relative}
+.card h3{font-size:1.65rem;color:var(--navy);margin-bottom:12px;transform:translateZ(24px)}
+.card p{color:var(--muted);font-size:.93rem;transform:translateZ(12px)}
+.more{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--gold);transform:translateZ(20px)}
+.more .ic{transition:transform .3s var(--ease)}.more:hover .ic{transform:translateX(6px)}
+
+/* sobre (manifesto) */
+.about{background:radial-gradient(60% 80% at 50% 0%,#17335c,transparent 70%),var(--night);color:#fff;overflow:hidden}
+.about blockquote{font-family:var(--serif);font-size:clamp(1.9rem,3.8vw,3.2rem);line-height:1.25;max-width:27ch;margin:0 auto;font-weight:500}
+.about blockquote em{color:var(--gold-2)}
+.about .mark-q{font-family:var(--serif);font-size:7rem;line-height:.6;color:var(--gold);opacity:.6;display:block;height:48px}
+.about .lead{color:rgba(255,255,255,.7);max-width:64ch;margin-top:34px}
+.values{display:grid;grid-template-columns:repeat(3,1fr);margin-top:80px;border-top:1px solid rgba(216,187,131,.25)}
+.value{padding:44px 34px 0}
+.value+.value{border-left:1px solid rgba(216,187,131,.2)}
+.value .ic{font-size:2rem;color:var(--gold-2);margin-bottom:16px}
+.value h3{font-size:1.6rem;margin-bottom:8px}
+.value p{font-size:.93rem;color:rgba(255,255,255,.62)}
+
+/* serviços */
+.tablist{display:inline-flex;gap:0;margin-bottom:44px;border:1px solid var(--line);background:var(--paper);padding:6px}
+.tab{padding:15px 34px;border:0;background:none;cursor:pointer;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted);transition:.3s var(--ease);position:relative}
+.tab:hover{color:var(--navy)}
+.tab[aria-selected=true]{background:var(--navy);color:#fff;box-shadow:0 4px 0 var(--night)}
+.panel{background:var(--paper);border:1px solid var(--line);padding:64px 56px;max-width:960px;margin:0 auto;position:relative;box-shadow:0 40px 70px rgba(12,31,58,.08);animation:pin .6s var(--ease)}
+.panel::before{content:"";position:absolute;inset:10px;border:1px solid rgba(184,151,90,.28);pointer-events:none}
+.panel[hidden]{display:none}
+@keyframes pin{from{opacity:0;transform:translateY(20px) rotateX(-6deg)}}
+.panel h3{font-size:2.3rem;color:var(--navy)}
+.panel>p{color:var(--muted);max-width:52ch;margin:12px auto 0}
+.panel ul{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;margin:40px 0 44px;text-align:left}
+.panel li{display:flex;gap:14px;font-size:.95rem;padding:15px 0;border-bottom:1px solid var(--line)}
+.panel li .ic{color:var(--gold);font-size:1.15rem;margin-top:3px}
+
+/* etapas */
+.steps-sec{background:var(--paper)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative}
+.steps::before{content:"";position:absolute;left:12.5%;right:12.5%;top:38px;height:1px;background:linear-gradient(90deg,transparent,var(--gold) 15%,var(--gold) 85%,transparent)}
+.step .dot{width:76px;height:76px;margin:0 auto 26px;display:grid;place-items:center;background:var(--navy);color:var(--gold-2);font-family:var(--serif);font-size:1.9rem;border-radius:50%;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--gold),0 18px 30px rgba(12,31,58,.25);transition:transform .8s var(--ease);position:relative;z-index:1}
+.step:hover .dot{transform:rotateY(360deg)}
+.step h3{font-size:1.6rem;color:var(--navy);margin-bottom:8px}
+.step p{font-size:.92rem;color:var(--muted);max-width:26ch;margin-inline:auto}
+
+/* faq */
+.faq-list{max-width:820px;margin:0 auto;display:grid;gap:14px;text-align:left}
+details{background:var(--paper);border:1px solid var(--line);transition:border-color .3s,box-shadow .3s}
+details[open]{border-color:var(--gold-2);box-shadow:0 20px 40px rgba(12,31,58,.08)}
+summary{cursor:pointer;list-style:none;padding:24px 30px;font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:20px;line-height:1.25}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";flex:none;width:12px;height:12px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg) translate(-3px,-3px);transition:transform .35s var(--ease)}
+details[open] summary::after{transform:rotate(-135deg) translate(-3px,-3px)}
+details p{padding:0 30px 28px;color:var(--muted);animation:pin .4s var(--ease)}
+
+/* CTA */
+.cta-sec{background:var(--night);padding:110px 0;color:#fff;overflow:hidden;background-image:radial-gradient(50% 90% at 50% 50%,rgba(28,63,112,.55),transparent 75%)}
+.frame{position:relative;padding:76px 40px;border:1px solid rgba(216,187,131,.45);max-width:940px;margin:0 auto}
+.frame::before{content:"";position:absolute;inset:10px;border:1px solid rgba(216,187,131,.2);pointer-events:none}
+.frame h2{color:#fff}
+.frame p{color:rgba(255,255,255,.72);max-width:50ch;margin:20px auto 40px}
+.frame .c{position:absolute;width:14px;height:14px;background:var(--night);border:1px solid var(--gold);transform:rotate(45deg)}
+.frame .c:nth-child(1){left:-8px;top:-8px}.frame .c:nth-child(2){right:-8px;top:-8px}.frame .c:nth-child(3){left:-8px;bottom:-8px}.frame .c:nth-child(4){right:-8px;bottom:-8px}
+
+/* contato */
+.contact{background:var(--ivory)}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:56px}
+.info a,.info div{display:block;background:var(--paper);border:1px solid var(--line);padding:42px 24px;position:relative;transition:.4s var(--ease)}
+.info a:hover{transform:translateY(-8px);box-shadow:0 26px 46px rgba(12,31,58,.12);border-color:var(--gold-2)}
+.info .ic{font-size:2rem;color:var(--gold);margin-bottom:16px}
+.info b{display:block;font-family:var(--serif);font-size:1.5rem;color:var(--navy);font-weight:600;line-height:1.2;margin-bottom:6px}
+.info span{font-size:.92rem;color:var(--muted);word-break:break-word}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--paper);border:1px solid var(--line);box-shadow:0 40px 70px rgba(12,31,58,.09);text-align:left}
+form{padding:52px 48px;display:grid;gap:20px}
+form h3{font-size:2.1rem;color:var(--navy);text-align:center}
+form>p{text-align:center;color:var(--muted);font-size:.92rem;margin-top:-10px}
+label{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--navy);display:grid;gap:8px}
+input,select,textarea{font:inherit;font-size:.95rem;letter-spacing:0;text-transform:none;font-weight:400;padding:14px 16px;border:1px solid var(--line);background:var(--ivory);border-radius:0;width:100%;transition:.25s;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold);background:#fff;box-shadow:0 0 0 4px rgba(184,151,90,.18)}
+textarea{min-height:110px;resize:vertical}
+form .btn{width:100%}
+.note{font-size:.72rem;color:var(--muted);text-align:center}
+.map{min-height:460px;position:relative;background:var(--navy)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.85) contrast(1.05) sepia(.15)}
+
+/* footer */
+footer{background:#030a14;color:rgba(255,255,255,.58);padding:80px 0 34px;font-size:.88rem}
+footer .logo{margin:0 auto 34px;color:#fff}
+footer .logo .mark{width:34px;height:34px;border:1px solid var(--gold-2);margin-bottom:11px}
+footer nav ul{justify-content:center;flex-wrap:wrap;gap:12px 36px}
+.fcontact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 36px;margin:34px 0 0;padding-top:34px;border-top:1px solid rgba(255,255,255,.08)}
+.fcontact a{display:inline-flex;gap:10px;align-items:center;transition:color .2s}
+.fcontact a:hover{color:var(--gold-2)}.fcontact .ic{color:var(--gold-2);font-size:1.15rem}
+.legal{max-width:92ch;margin:34px auto 0;font-size:.74rem;color:rgba(255,255,255,.4)}
+
+.wpp{position:fixed;right:24px;bottom:24px;z-index:80;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:1.9rem;background:linear-gradient(180deg,#39d97f,#1fae57);color:#04220f;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 4px 0 #0f7237,0 14px 26px rgba(0,0,0,.3);transition:.2s}
+.wpp::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #39d97f;animation:ping 2.4s infinite}
+@keyframes ping{to{transform:scale(1.6);opacity:0}}
+.wpp:hover{transform:translateY(-3px)}
+
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+.card.reveal.in{transition:transform .25s ease-out,box-shadow .4s,border-color .4s;transition-delay:0s}
+
+@media (max-width:1000px){
+  section{padding:88px 0}.head{margin-bottom:52px}
+  .nav{grid-template-columns:auto 1fr;height:76px}
+  .logo{grid-column:1;flex-direction:row;gap:12px;align-items:center}
+  .logo .mark{margin:0;width:28px;height:28px}.logo .mark b{font-size:1.1rem}
+  .logo strong{font-size:1.2rem;letter-spacing:.16em;padding:0}
+  .logo small{display:none}
+  header.solid .logo .mark{width:28px;height:28px;border-width:1px;opacity:1;margin:0}
+  .burger{display:block}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(6,15,29,.98);padding:10px 22px 30px}
+  header.open .menu{display:block}
+  .menu nav ul{flex-direction:column;align-items:center!important;gap:20px;padding:12px 0}
+  .menu nav:last-child .btn{margin-top:6px}
+  .pillars,.values,.info,.duo{grid-template-columns:1fr}
+  .pillar{padding:34px 10px}.pillar+.pillar::before{left:20%;right:20%;top:0;bottom:auto;width:auto;height:1px;background:var(--line)}
+  .value{padding:36px 10px 0}.value+.value{border-left:0;border-top:1px solid rgba(216,187,131,.2);margin-top:36px}
+  .grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:50px 20px}.steps::before{display:none}
+  .orbwrap{width:520px;height:520px;transform:scale(.8)}
+  .map{min-height:340px}
+}
+@media (max-width:640px){
+  .grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .tablist{display:grid;width:100%}
+  .panel{padding:44px 22px}.panel ul{grid-template-columns:1fr}
+  .frame{padding:56px 22px}
+  form{padding:38px 22px}
+  .hero-foot{gap:12px;letter-spacing:.2em;font-size:.6rem}
+  .hero-foot span:nth-of-type(3),.hero-foot i:nth-of-type(2){display:none}
+  .cta .btn{width:100%}
+  .orbwrap{transform:scale(.55)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v17M7 20h10M5 7h14M5 7l-3 7a3.5 3 0 0 0 6 0zM19 7l-3 7a3.5 3 0 0 0 6 0z"/></symbol>
+  <symbol id="i-gavel" viewBox="0 0 24 24"><path d="m13 5 6 6-3 3-6-6zM10 8l-6.5 6.5 3 3L13 11M4 21h10"/></symbol>
+  <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-4 3-6 6.5-6s6 2 6.5 6M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2 .6 3.2 2.5 3.5 6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20S4.5 15.4 4.5 9.8A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.5 2.2C19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M6 3h12M6 21h12M8 3v3l4 6-4 6v3M16 3v3l-4 6 4 6v3"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6zM9 8V7a3 3 0 0 1 6 0v1"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.500 3.200 7.800 8 9 4.800-1.200 8-4.500 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.600-6.500 10-6.500S22 12 22 12s-3.600 6.500-10 6.500S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M3 11l4-4 4 1 4-2 6 5-3 3M3 11l5 6 2-1M10 16l2 2 2-1.500M13 15l2.500 2.500 2-1.500"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.500 4.500L19 7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+  <symbol id="i-wpp" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.300 7.900L3 21l1.200-4.500A9 9 0 1 1 21 12z"/><path d="M9 8.500c0 3.500 3 6.500 6.500 6.500l1-1.600-2-1-1 .8c-1-.4-2-1.400-2.400-2.400l.8-1-1-2z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v3a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></symbol>
+</svg>
+
+<div id="bar"></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#inicio" class="logo" aria-label="Ferreira Advocacia">
+      <span class="mark"><b>F</b></span>
+      <strong>FERREIRA</strong>
+      <small>ADVOCACIA</small>
+    </a>
+    <button class="burger" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+    <div class="menu">
+      <nav><ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#atuacao">Atuação</a></li>
+        <li><a href="#areas">Áreas</a></li>
+      </ul></nav>
+      <nav><ul>
+        <li><a href="#escritorio">Escritório</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+        <li><a href="#contato" class="btn btn-gold btn-sm">Contato</a></li>
+      </ul></nav>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="stage" aria-hidden="true">
+    <div class="orbwrap" id="orb">
+      <div class="axis"><div class="sphere">
+        <i class="m" style="--k:0"></i><i class="m" style="--k:1"></i><i class="m" style="--k:2"></i>
+        <i class="m" style="--k:3"></i><i class="m" style="--k:4"></i><i class="m" style="--k:5"></i>
+        <i class="l l0" style="--h:0;transform:rotateX(90deg)"></i>
+        <i class="l l1"></i><i class="l l2"></i><i class="l l3"></i><i class="l l4"></i>
+      </div></div>
+    </div>
+  </div>
+  <div class="dust" id="dust" aria-hidden="true"></div>
+
+  <div class="wrap in">
+    <p class="place reveal">Itaí · São Paulo</p>
+    <h1 class="reveal" style="--d:.12s">Segurança jurídica para as decisões que <em>realmente importam</em></h1>
+    <p class="sub reveal" style="--d:.24s">Advocacia, consultoria e assessoria jurídica para pessoas e empresas, com atendimento próximo, ético e transparente.</p>
+    <div class="cta reveal" style="--d:.36s">
+      <a href="#contato" class="btn btn-gold" data-wa>Falar no WhatsApp <svg class="ic go"><use href="#i-arrow"/></svg></a>
+      <a href="#areas" class="btn btn-line">Áreas de atuação</a>
+    </div>
+  </div>
+  <div class="scroll" aria-hidden="true"></div>
+  <div class="hero-foot" aria-hidden="true"><span>Advocacia</span><i></i><span>Consultoria</span><i></i><span>Assessoria</span></div>
+</section>
+
+<!-- PILARES -->
+<section id="atuacao">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">Como atuamos</span>
+      <h2 class="reveal" style="--d:.1s">Três frentes, um só <em>compromisso</em></h2>
+      <div class="orn reveal" style="--d:.2s"><i></i></div>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal"><span class="n">I</span><h3>Advocacia</h3><p>Representação técnica em ações judiciais e procedimentos administrativos, defendendo seus direitos em todas as instâncias.</p></div>
+      <div class="pillar reveal" style="--d:.15s"><span class="n">II</span><h3>Consultoria</h3><p>Orientação jurídica preventiva para contratos, negócios e decisões, antes que o problema apareça.</p></div>
+      <div class="pillar reveal" style="--d:.3s"><span class="n">III</span><h3>Assessoria</h3><p>Acompanhamento contínuo de pessoas e empresas, com respostas ágeis e comunicação direta.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÁREAS -->
+<section class="areas" id="areas">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">Áreas de atuação</span>
+      <h2 class="reveal" style="--d:.1s">Direito com <em>método</em> e proximidade</h2>
+      <div class="orn reveal" style="--d:.2s"><i></i></div>
+      <p class="lead reveal" style="--d:.25s">Cada demanda recebe análise individual e uma estratégia pensada para o seu objetivo.</p>
+    </div>
+    <div class="grid">
+      <article class="card reveal"><div class="ico"><svg class="ic"><use href="#i-gavel"/></svg></div><h3>Direito do Trabalho</h3><p>Defesa e consultoria para empresas e trabalhadores: reclamações, acordos, contratos e rotinas de RH.</p><a href="#servicos" class="more" data-tab="1">Saiba mais <svg class="ic"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" style="--d:.1s"><div class="ico"><svg class="ic"><use href="#i-doc"/></svg></div><h3>Direito Civil</h3><p>Contratos, responsabilidade civil, cobranças, questões imobiliárias e resolução de conflitos.</p><a href="#contato" class="more">Falar sobre o caso <svg class="ic"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" style="--d:.2s"><div class="ico"><svg class="ic"><use href="#i-heart"/></svg></div><h3>Família e Sucessões</h3><p>Divórcio, guarda, pensão, inventário e planejamento sucessório, com sigilo e sensibilidade.</p><a href="#contato" class="more">Falar sobre o caso <svg class="ic"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal"><div class="ico"><svg class="ic"><use href="#i-hourglass"/></svg></div><h3>Direito Previdenciário</h3><p>Aposentadorias, benefícios por incapacidade, pensões e revisões junto ao INSS.</p><a href="#contato" class="more">Falar sobre o caso <svg class="ic"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" style="--d:.1s"><div class="ico"><svg class="ic"><use href="#i-bag"/></svg></div><h3>Direito do Consumidor</h3><p>Defesa contra cobranças indevidas, falhas na prestação de serviços e práticas abusivas.</p><a href="#contato" class="more">Falar sobre o caso <svg class="ic"><use href="#i-arrow"/></svg></a></article>
+      <article class="card reveal" style="--d:.2s"><div class="ico"><svg class="ic"><use href="#i-brief"/></svg></div><h3>Direito Empresarial</h3><p>Assessoria contínua a empresas: contratos, societário, compliance e prevenção de passivos.</p><a href="#servicos" class="more" data-tab="0">Saiba mais <svg class="ic"><use href="#i-arrow"/></svg></a></article>
+    </div>
+  </div>
+</section>
+
+<!-- ESCRITÓRIO -->
+<section class="about grain" id="escritorio">
+  <div class="wrap">
+    <span class="eyebrow reveal">O escritório</span>
+    <span class="mark-q reveal" aria-hidden="true">“</span>
+    <blockquote class="reveal" style="--d:.1s">Cada caso é uma história. Tratamos com o <em>rigor técnico</em> que a lei exige e a atenção que as pessoas merecem.</blockquote>
+    <div class="orn reveal" style="--d:.2s"><i></i></div>
+    <p class="lead reveal" style="--d:.25s">O Ferreira Advocacia atende Itaí e região com uma advocacia de resultado sustentada em ética, clareza e proximidade, do primeiro contato ao encerramento do caso.</p>
+    <div class="values">
+      <div class="value reveal"><svg class="ic"><use href="#i-scale"/></svg><h3>Ética</h3><p>Conduta pautada pelo Código de Ética e Disciplina da OAB, com sigilo absoluto.</p></div>
+      <div class="value reveal" style="--d:.12s"><svg class="ic"><use href="#i-eye"/></svg><h3>Transparência</h3><p>Honorários claros, linguagem simples e informação constante sobre o andamento.</p></div>
+      <div class="value reveal" style="--d:.24s"><svg class="ic"><use href="#i-handshake"/></svg><h3>Proximidade</h3><p>Atendimento direto, presencial ou remoto, com quem cuida do seu caso.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">Serviços</span>
+      <h2 class="reveal" style="--d:.1s">Soluções para <em>empresas</em> e pessoas</h2>
+      <div class="orn reveal" style="--d:.2s"><i></i></div>
+    </div>
+    <div class="tablist reveal" role="tablist">
+      <button class="tab" role="tab" aria-selected="true">Consultivo</button>
+      <button class="tab" role="tab" aria-selected="false">Contencioso</button>
+      <button class="tab" role="tab" aria-selected="false">Gestão de processos</button>
+    </div>
+    <div class="reveal" style="--d:.1s">
+      <div class="panel" role="tabpanel">
+        <h3>Consultivo e preventivo</h3>
+        <p>Estrutura jurídica para operar com segurança e previsibilidade.</p>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg>Elaboração e revisão de contratos</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Contratos de terceirização e prestação de serviços</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Código de conduta e compliance</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Pareceres e opiniões legais</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Auditoria e análise de riscos trabalhistas</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Treinamento de lideranças e RH</li>
+        </ul>
+        <a href="#contato" class="btn btn-navy">Solicitar orientação <svg class="ic go"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="panel" role="tabpanel" hidden>
+        <h3>Contencioso</h3>
+        <p>Defesa técnica e estratégica em todas as instâncias.</p>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg>Ações e reclamações trabalhistas</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Ações cíveis, de família e consumidor</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Recursos aos tribunais</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Defesa em procedimentos administrativos</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Acordos judiciais e extrajudiciais</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Acompanhamento de audiências</li>
+        </ul>
+        <a href="#contato" class="btn btn-navy">Falar sobre um processo <svg class="ic go"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="panel" role="tabpanel" hidden>
+        <h3>Gestão de processos</h3>
+        <p>Para quem tem várias demandas: visão organizada e decisões baseadas em dados.</p>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg>Diagnóstico completo das demandas</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Plano de ação por prioridade e risco</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Acompanhamento contínuo de prazos</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Relatórios periódicos de andamento</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Controle de execução e cumprimento de sentença</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Ações para prevenir novos conflitos</li>
+        </ul>
+        <a href="#contato" class="btn btn-navy">Avaliar minha situação <svg class="ic go"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ETAPAS -->
+<section class="steps-sec">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">Atendimento</span>
+      <h2 class="reveal" style="--d:.1s">Do primeiro contato à <em>solução</em></h2>
+      <div class="orn reveal" style="--d:.2s"><i></i></div>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="dot">1</div><h3>Contato</h3><p>Você fala com a gente por WhatsApp, telefone ou e-mail.</p></div>
+      <div class="step reveal" style="--d:.15s"><div class="dot">2</div><h3>Análise</h3><p>Ouvimos o caso e avaliamos a viabilidade jurídica e os riscos.</p></div>
+      <div class="step reveal" style="--d:.3s"><div class="dot">3</div><h3>Proposta</h3><p>Apresentamos a estratégia, os prazos e os honorários com clareza.</p></div>
+      <div class="step reveal" style="--d:.45s"><div class="dot">4</div><h3>Atuação</h3><p>Formalizamos o contrato e conduzimos o caso com acompanhamento constante.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">Dúvidas frequentes</span>
+      <h2 class="reveal" style="--d:.1s">Perguntas <em>frequentes</em></h2>
+      <div class="orn reveal" style="--d:.2s"><i></i></div>
+    </div>
+    <div class="faq-list">
+      <details class="reveal" open><summary>Quando devo procurar um advogado?</summary><p>O ideal é procurar antes do conflito: ao assinar contratos, contratar ou demitir, comprar um imóvel ou tomar decisões com impacto jurídico. A orientação preventiva costuma custar menos do que a solução de um litígio.</p></details>
+      <details class="reveal"><summary>Como funcionam os honorários?</summary><p>Variam conforme a natureza e a complexidade da demanda. Tudo é apresentado em proposta e formalizado em contrato antes do início dos trabalhos, seguindo as regras da OAB.</p></details>
+      <details class="reveal"><summary>Vocês garantem resultado?</summary><p>Não. A advocacia é atividade de meio e nenhum profissional sério pode prometer resultado. Nosso compromisso é com a melhor estratégia técnica, a transparência e o acompanhamento constante.</p></details>
+      <details class="reveal"><summary>Atendem de forma remota?</summary><p>Sim. Além do atendimento presencial em Itaí, é possível conduzir reuniões por videoconferência e assinar documentos eletronicamente.</p></details>
+      <details class="reveal"><summary>Minhas informações ficam protegidas?</summary><p>Sim. Tudo o que é tratado com o escritório é protegido pelo sigilo profissional e pela Lei Geral de Proteção de Dados (LGPD).</p></details>
+      <details class="reveal"><summary>É possível resolver sem ir à Justiça?</summary><p>Em muitos casos, sim. Conduzimos negociações e acordos extrajudiciais que encerram a discussão com segurança jurídica, menos tempo e menor custo.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec grain">
+  <div class="wrap">
+    <div class="frame reveal">
+      <i class="c"></i><i class="c"></i><i class="c"></i><i class="c"></i>
+      <span class="eyebrow">Atendimento</span>
+      <h2>Precisa de orientação <em>jurídica?</em></h2>
+      <p>Conte seu caso. Retornamos com uma análise inicial e os próximos passos.</p>
+      <div class="cta">
+        <a href="#contato" class="btn btn-wpp" data-wa><svg class="ic"><use href="#i-wpp"/></svg>Chamar no WhatsApp</a>
+        <a href="tel:+5514997986393" class="btn btn-line"><svg class="ic"><use href="#i-phone"/></svg>(14) 99798-6393</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">Contato</span>
+      <h2 class="reveal" style="--d:.1s">Vamos conversar sobre o <em>seu caso</em></h2>
+      <div class="orn reveal" style="--d:.2s"><i></i></div>
+    </div>
+    <div class="info">
+      <a href="tel:+5514997986393" class="reveal"><svg class="ic"><use href="#i-phone"/></svg><b>Telefone / WhatsApp</b><span>(14) 99798-6393</span></a>
+      <a href="mailto:advppsferreira@hotmail.com" class="reveal" style="--d:.1s"><svg class="ic"><use href="#i-mail"/></svg><b>E-mail</b><span>advppsferreira@hotmail.com</span></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Av.+Santo+Ant%C3%B4nio%2C+1352%2C+Ita%C3%AD%2C+SP" target="_blank" rel="noopener" class="reveal" style="--d:.2s"><svg class="ic"><use href="#i-pin"/></svg><b>Endereço</b><span>Av. Santo Antônio, nº 1352<br>Jardim Santo Antônio, Itaí/SP</span></a>
+    </div>
+    <div class="duo reveal">
+      <form id="lead">
+        <h3>Envie sua mensagem</h3>
+        <p>Respondemos pelo WhatsApp.</p>
+        <label>Nome<input name="nome" required autocomplete="name"></label>
+        <label>Telefone<input name="tel" type="tel" required autocomplete="tel" placeholder="(00) 00000-0000"></label>
+        <label>Assunto
+          <select name="area"><option>Direito do Trabalho</option><option>Direito Civil</option><option>Família e Sucessões</option><option>Direito Previdenciário</option><option>Direito do Consumidor</option><option>Direito Empresarial</option><option>Outro assunto</option></select>
+        </label>
+        <label>Mensagem<textarea name="msg" required></textarea></label>
+        <button class="btn btn-gold" type="submit"><svg class="ic"><use href="#i-wpp"/></svg>Enviar pelo WhatsApp</button>
+        <p class="note">Não envie documentos nem informações sigilosas por este formulário.</p>
+      </form>
+      <div class="map"><iframe title="Mapa do escritório" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+Santo+Ant%C3%B4nio%2C+1352%2C+Ita%C3%AD%2C+SP&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#inicio" class="logo" aria-label="Ferreira Advocacia"><span class="mark"><b>F</b></span><strong>FERREIRA</strong><small>ADVOCACIA</small></a>
+    <nav><ul>
+      <li><a href="#atuacao">Atuação</a></li><li><a href="#areas">Áreas</a></li><li><a href="#escritorio">Escritório</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#faq">Dúvidas</a></li><li><a href="#contato">Contato</a></li>
+    </ul></nav>
+    <div class="fcontact">
+      <a href="tel:+5514997986393"><svg class="ic"><use href="#i-phone"/></svg>(14) 99798-6393</a>
+      <a href="mailto:advppsferreira@hotmail.com"><svg class="ic"><use href="#i-mail"/></svg>advppsferreira@hotmail.com</a>
+      <a href="https://www.instagram.com/escritorioferreira_/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-insta"/></svg>@escritorioferreira_</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Av.+Santo+Ant%C3%B4nio%2C+1352%2C+Ita%C3%AD%2C+SP" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Av. Santo Antônio, 1352, Itaí/SP</a>
+    </div>
+    <p class="legal">© <span id="y"></span> Ferreira Advocacia. Todos os direitos reservados. Este site tem caráter meramente informativo, em conformidade com o Código de Ética e Disciplina e o Provimento 205/2021 da OAB, e não constitui promessa de resultado nem captação de clientela.</p>
+  </div>
+</footer>
+
+<a class="wpp" href="#contato" data-wa aria-label="Conversar no WhatsApp"><svg class="ic"><use href="#i-wpp"/></svg></a>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const WA='5514997986393',still=matchMedia('(prefers-reduced-motion:reduce)').matches,hover=matchMedia('(hover:hover)').matches;
+const wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+
+// header, progresso, menu
+const H=$('header'),bar=$('#bar'),burger=$('.burger');
+const onScroll=()=>{H.classList.toggle('solid',scrollY>40);bar.style.transform=`scaleX(${scrollY/(document.documentElement.scrollHeight-innerHeight||1)})`};
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+burger.onclick=()=>burger.setAttribute('aria-expanded',H.classList.toggle('open'));
+$('.menu').onclick=e=>{if(e.target.closest('a')){H.classList.remove('open');burger.setAttribute('aria-expanded',false)}};
+
+// botões WhatsApp
+$$('[data-wa]').forEach(a=>a.addEventListener('click',e=>{if(a.classList.contains('wpp')||a.closest('.hero,.cta-sec')){e.preventDefault();open(wa('Olá! Vim pelo site e gostaria de falar com o escritório.'),'_blank','noopener')}}));
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.reveal').forEach(el=>io.observe(el));
+
+// abas
+const tabs=$$('.tab'),panels=$$('.panel');
+const pick=i=>{tabs.forEach((t,k)=>t.setAttribute('aria-selected',k==i));panels.forEach((p,k)=>p.hidden=k!=i)};
+tabs.forEach((t,i)=>t.onclick=()=>pick(i));
+$$('[data-tab]').forEach(a=>a.addEventListener('click',()=>pick(+a.dataset.tab)));
+
+// FAQ: uma aberta por vez
+$$('details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)$$('details').forEach(o=>o!==d&&(o.open=false))}));
+
+// cards 3D + brilho
+if(hover&&!still)$$('.card').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    c.style.transform=`perspective(900px) rotateX(${(.5-y)*8}deg) rotateY(${(x-.5)*10}deg) translateY(-6px)`;c.style.setProperty('--gx',x*100+'%');c.style.setProperty('--gy',y*100+'%')});
+  c.addEventListener('mouseleave',()=>c.style.transform='');
+});
+
+// esfera armilar: inclina com o mouse
+const hero=$('.hero'),orb=$('#orb');
+if(hover&&!still)hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  orb.style.setProperty('--ry',x*24+'deg');orb.style.setProperty('--rx',-y*16+'deg')});
+
+// partículas
+if(!still){const d=$('#dust');for(let i=0;i<16;i++){const s=document.createElement('span'),z=2+Math.random()*3;
+  s.style.cssText=`left:${Math.random()*100}%;width:${z}px;height:${z}px;animation-duration:${9+Math.random()*10}s;animation-delay:${-Math.random()*16}s`;d.append(s)}}
+
+// formulário -> WhatsApp
+$('#lead').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+  open(wa(`Olá! Sou ${f.get('nome')} (${f.get('tel')}). Assunto: ${f.get('area')}.\n${f.get('msg')}`),'_blank','noopener')};
+
+$('#y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

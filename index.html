@@ -25,7 +25,7 @@
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes ring{0%,100%{transform:scale(.96);opacity:.55}50%{transform:scale(1.04);opacity:1}}
     @media (max-width:840px){.wrap{width:min(var(--max),calc(100% - 34px))}.menu-button{display:block}.nav-links{position:absolute;top:100%;right:17px;left:17px;display:none;flex-direction:column;align-items:stretch;gap:0;padding:10px 20px 18px;border:1px solid var(--line);background:var(--white);box-shadow:0 18px 35px rgba(19,57,62,.1)}.nav-links.is-open{display:flex}.nav-links a{padding:12px 0}.nav-contact{border:0;border-top:1px solid var(--line)}.hero,.intro,.areas,.experience,.steps,.transparency,.faq,.about{padding:72px 0}.hero-grid,.intro-grid,.experience-top,.transparency-box,.about,.faq-grid,.contact-box{grid-template-columns:1fr;gap:44px}.stat-row{grid-template-columns:1fr}.stat:first-child{padding-right:0;border-right:0;border-bottom:1px solid rgba(240,211,174,.35)}.stat:last-child{padding-left:0}.hero-mark{min-height:340px}.section-head{display:block}.section-head>p{margin-top:20px}.area-grid{grid-template-columns:repeat(2,1fr)}.steps-list{grid-template-columns:repeat(2,1fr)}.step:nth-child(2){border-right:0}.step:nth-child(n+3){margin-top:28px;padding-top:25px;border-top:1px solid var(--line)}.transparency-box{padding:40px 26px}.contact{padding:72px 0 90px}.contact-box{padding:40px 26px}.footer-row{display:block}.footer-links{margin-top:18px}}
     @media (max-width:520px){h1{font-size:clamp(2.2rem,9vw,3.2rem)}.hero-actions{align-items:flex-start;flex-direction:column;gap:18px}.button{width:100%;min-height:64px}.area-grid,.steps-list,.principles,.guarantees{grid-template-columns:1fr}.area{min-height:0}.step,.step:not(:first-child){padding-left:0;padding-right:0;border-right:0}.step:nth-child(n+2){margin-top:28px;padding-top:25px;border-top:1px solid var(--line)}.principle{padding:18px 0}.data-row{display:block}.data-row span{display:block;margin-bottom:4px}.whatsapp-float{left:14px;bottom:14px;gap:10px}.floating-whatsapp{width:62px;height:62px}.whatsapp-help{font-size:.9rem}.hero-mark{min-height:300px}.hero-mark:before{width:230px;height:230px}.hero-mark img{width:58%}}
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-mark,.hero-mark:before,.area,.arrow,.hero-grid>div:first-child{animation:none;transition:none}.reveal{opacity:1;transform:none;transition:none}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
@@ -84,11 +84,9 @@
     navLinks.addEventListener('click',event=>{if(event.target.closest('a')){navLinks.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false')}});
 
     const nums=document.querySelectorAll('.stat-value[data-alvo]');
-    const reduz=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const formata=n=>'+'+Math.round(n).toLocaleString('pt-BR');
     function conta(el){
       const alvo=parseFloat(el.getAttribute('data-alvo'));
-      if(reduz){el.textContent=formata(alvo);return}
       const dur=1400;let ini=null;
       function passo(t){if(!ini)ini=t;const p=Math.min((t-ini)/dur,1);const suave=1-Math.pow(1-p,3);el.textContent=formata(alvo*suave);if(p<1)requestAnimationFrame(passo);else el.textContent=formata(alvo)}
       requestAnimationFrame(passo);

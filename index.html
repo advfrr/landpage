@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#4d0304">
   <meta name="description" content="Advogado trabalhista em Itaí/SP com 10 anos de experiência. Atendimento ético, claro e próximo para tirar suas dúvidas sobre direitos no trabalho.">
   <title>Ferreira Advocacia | Advogado Trabalhista em Itaí/SP</title>
-  <link rel="canonical" href="https://advfrr.github.io/landpage/">
+  <link rel="canonical" href="https://adevferreira.vercel.app/">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="apple-touch-icon" href="logo.png">
   <meta name="robots" content="index, follow">
@@ -14,19 +14,19 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Ferreira Advocacia | Advogado Trabalhista em Itaí/SP">
   <meta property="og:description" content="Advogado trabalhista em Itaí/SP com 10 anos de experiência. Atendimento ético, claro e próximo para tirar suas dúvidas sobre direitos no trabalho.">
-  <meta property="og:url" content="https://advfrr.github.io/landpage/">
-  <meta property="og:image" content="https://advfrr.github.io/landpage/logo.png">
+  <meta property="og:url" content="https://adevferreira.vercel.app/">
+  <meta property="og:image" content="https://adevferreira.vercel.app/logo.png">
   <meta property="og:site_name" content="Ferreira Advocacia">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Ferreira Advocacia | Advogado Trabalhista em Itaí/SP">
   <meta name="twitter:description" content="Advogado trabalhista em Itaí/SP com 10 anos de experiência. Atendimento ético, claro e próximo para tirar suas dúvidas sobre direitos no trabalho.">
-  <meta name="twitter:image" content="https://advfrr.github.io/landpage/logo.png">
+  <meta name="twitter:image" content="https://adevferreira.vercel.app/logo.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LegalService",
     "name": "Ferreira Advocacia",
-    "image": "https://advfrr.github.io/landpage/logo.png",
+    "image": "https://adevferreira.vercel.app/logo.png",
     "description": "Advocacia trabalhista com atendimento ético, próximo e informativo.",
     "areaServed": "Itaí, SP",
     "telephone": "+5514997986393",
@@ -39,7 +39,7 @@
       "addressCountry": "BR"
     },
     "sameAs": ["https://instagram.com/escritorioferreira_"],
-    "url": "https://advfrr.github.io/landpage/"
+    "url": "https://adevferreira.vercel.app/"
   }
   </script>
   <script type="application/ld+json">
@@ -55,6 +55,14 @@
       {"@type": "Question", "name": "O atendimento pode ser feito on-line?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O contato inicial e boa parte do acompanhamento podem ocorrer por WhatsApp e outros canais digitais, conforme a necessidade do caso."}}
     ]
   }
+  </script>
+  <!-- TROCAR AW-XXXXXXXXX pelo ID da sua conta Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-XXXXXXXXX');
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -134,6 +142,11 @@
     const menuButton=document.querySelector('.menu-button');const navLinks=document.querySelector('.nav-links');
     menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',open)});
     navLinks.addEventListener('click',event=>{if(event.target.closest('a')){navLinks.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false')}});
+
+    // TROCAR AW-XXXXXXXXX/XXXXXXXXXXX pelo label da conversão "Clique WhatsApp" no Google Ads
+    document.querySelectorAll('a[href*="wa.me"]').forEach(a=>a.addEventListener('click',()=>{
+      if(typeof gtag==='function')gtag('event','conversion',{'send_to':'AW-XXXXXXXXX/XXXXXXXXXXX'});
+    }));
 
     const nums=document.querySelectorAll('.stat-value[data-alvo]');
     const formata=n=>'+'+Math.round(n).toLocaleString('pt-BR');

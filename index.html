@@ -61,13 +61,13 @@
     ]
   }
   </script>
-  <!-- TROCAR AW-XXXXXXXXX pelo ID da sua conta Google Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16669917747"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'AW-XXXXXXXXX');
+    gtag('config', 'AW-16669917747');
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1517,9 +1517,14 @@
     menuButton.addEventListener('click', () => { const open = navLinks.classList.toggle('is-open'); menuButton.setAttribute('aria-expanded', open) });
     navLinks.addEventListener('click', event => { if (event.target.closest('a')) { navLinks.classList.remove('is-open'); menuButton.setAttribute('aria-expanded', 'false') } });
 
-    // TROCAR AW-XXXXXXXXX/XXXXXXXXXXX pelo label da conversão "Clique WhatsApp" no Google Ads
+    // CONVERSÃO "Clique WhatsApp" (Google Ads)
+    // Depois de criar a conversão no Google Ads, troque SEU_IDENTIFICADOR pelo código que o Google mostrar
+    // (formato AW-16669917747/XXXXXXXXXXX). Enquanto não trocar, o evento não é enviado.
+    const CONVERSAO_WHATSAPP = 'AW-16669917747/SEU_IDENTIFICADOR';
     document.querySelectorAll('a[href*="wa.me"]').forEach(a => a.addEventListener('click', () => {
-      if (typeof gtag === 'function') gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXX' });
+      if (typeof gtag === 'function' && !CONVERSAO_WHATSAPP.includes('SEU_IDENTIFICADOR')) {
+        gtag('event', 'conversion', { 'send_to': CONVERSAO_WHATSAPP });
+      }
     }));
 
     const nums = document.querySelectorAll('.stat-value[data-alvo]');

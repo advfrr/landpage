@@ -1517,12 +1517,10 @@
     menuButton.addEventListener('click', () => { const open = navLinks.classList.toggle('is-open'); menuButton.setAttribute('aria-expanded', open) });
     navLinks.addEventListener('click', event => { if (event.target.closest('a')) { navLinks.classList.remove('is-open'); menuButton.setAttribute('aria-expanded', 'false') } });
 
-    // CONVERSÃO "Clique WhatsApp" (Google Ads)
-    // Depois de criar a conversão no Google Ads, troque SEU_IDENTIFICADOR pelo código que o Google mostrar
-    // (formato AW-16669917747/XXXXXXXXXXX). Enquanto não trocar, o evento não é enviado.
-    const CONVERSAO_WHATSAPP = 'AW-16669917747/SEU_IDENTIFICADOR';
+    // CONVERSÃO "Contato" (clique no WhatsApp) — Google Ads
+    const CONVERSAO_WHATSAPP = 'AW-16669917747/-pa6CMbiz_MZELOE64w-';
     document.querySelectorAll('a[href*="wa.me"]').forEach(a => a.addEventListener('click', () => {
-      if (typeof gtag === 'function' && !CONVERSAO_WHATSAPP.includes('SEU_IDENTIFICADOR')) {
+      if (typeof gtag === 'function') {
         gtag('event', 'conversion', { 'send_to': CONVERSAO_WHATSAPP });
       }
     }));
